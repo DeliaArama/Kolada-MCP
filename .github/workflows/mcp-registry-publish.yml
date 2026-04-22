@@ -4,12 +4,12 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: 'Version to publish (must match package.json)'
+        description: "Version to publish (must match package.json)"
         required: true
-        default: '2.2.1'
+        default: "2.2.1"
   push:
     tags:
-      - 'v*.*.*'
+      - "v*.*.*"
 
 jobs:
   validate:
@@ -23,7 +23,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: '18'
+          node-version: "18"
 
       - name: Validate server.json schema
         run: |
@@ -59,18 +59,6 @@ jobs:
             exit 1
           fi
 
-      - name: Test remote endpoints
-        run: |
-          # Test HTTP endpoint
-          HTTP_STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://kolada-mcp-pafn.onrender.com/health)
-
-          if [ "$HTTP_STATUS" != "200" ]; then
-            echo "HTTP endpoint health check failed: $HTTP_STATUS"
-            exit 1
-          fi
-
-          echo "Remote endpoints healthy"
-
   publish:
     name: Publish to MCP Registry
     runs-on: ubuntu-latest
@@ -83,7 +71,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: '18'
+          node-version: "18"
 
       - name: Install dependencies
         run: npm ci
@@ -135,7 +123,6 @@ jobs:
             ### Configuration
             - **MCP Name:** io.github.isakskogstad/kolada-mcp
             - **NPM Package:** kolada-mcp-server@${{ github.ref_name }}
-            - **Remote Endpoint:** https://kolada-mcp-pafn.onrender.com/mcp
 
             ### Files
             - `server.json` - MCP Registry configuration
