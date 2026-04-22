@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [2.1.0] - 2025-11-29
 
 ### Added
+
 - **Tool Annotations (MCP 2024-11-05)** - All tools now include:
   - `readOnlyHint: true` - Indicates read-only operations
   - `idempotentHint: true` - Safe to call multiple times
@@ -21,14 +22,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - **Refactored Architecture** - Shared handlers module:
   - Cleaner separation of concerns
-  - Eliminates code duplication between stdio and HTTP
   - Easier maintenance and testing
 
 ### Changed
+
 - Upgraded `@modelcontextprotocol/sdk` from 1.0.4 to 1.23.0
 - Updated server version to 2.1.0
 
 ### Removed
+
 - Removed unused code and dead types (~95 lines)
 - Removed test shell scripts with hardcoded credentials
 - Cleaned up unused validation functions
@@ -38,6 +40,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added ✨
 
 #### Core Features
+
 - **Prompts System** - 6 guided analysis workflows:
   - `analyze_municipality` - Comprehensive municipality analysis
   - `compare_municipalities` - Multi-municipality comparisons
@@ -47,6 +50,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `kpi_discovery` - KPI exploration and discovery
 
 #### Performance
+
 - **Caching System** - In-memory cache with configurable TTL:
   - 24-hour cache for municipalities and KPI catalog
   - Automatic cache cleanup and expiration
@@ -54,6 +58,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Reduces API calls by up to 90% for repeated queries
 
 #### Error Handling
+
 - **MCP Error Codes** - Standardized error handling:
   - Proper MCP error codes (InvalidRequest, InvalidParams, InternalError)
   - Input validation (KPI IDs, municipality IDs, OU IDs)
@@ -62,6 +67,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Context-aware error reporting
 
 #### Testing
+
 - **Unit Tests** - Comprehensive test coverage:
   - Cache functionality tests
   - Error handling tests
@@ -93,6 +99,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2024-12-XX
 
 ### Added
+
 - Initial release
 - 16 tools for Kolada API access
 - 3 resources (municipalities, KPI catalog, API info)

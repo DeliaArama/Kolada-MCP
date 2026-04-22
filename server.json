@@ -25,15 +25,5 @@
       },
       "runtimeHint": "node"
     }
-  ],
-  "remotes": [
-    {
-      "type": "streamable-http",
-      "url": "https://kolada-mcp-pafn.onrender.com/mcp"
-    },
-    {
-      "type": "sse",
-      "url": "https://kolada-mcp-pafn.onrender.com/sse"
-    }
   ]
 }

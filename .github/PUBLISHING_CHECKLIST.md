@@ -33,17 +33,8 @@ Use this checklist to ensure your Kolada MCP Server is ready for registry submis
   - [x] Configuration examples
   - [x] Usage examples
   - [x] Tool documentation
-  - [x] Remote endpoint URLs
 - [x] **Repository has topics/tags**: mcp, model-context-protocol, kolada
 - [x] **Repository URL** matches server.json
-
-### Remote Endpoints
-
-- [x] **HTTP endpoint** accessible: https://kolada-mcp-pafn.onrender.com/mcp
-- [x] **SSE endpoint** accessible: https://kolada-mcp-pafn.onrender.com/sse
-- [x] **Health endpoint** responding: https://kolada-mcp-pafn.onrender.com/health
-- [x] **Endpoints are stable** (deployed on Render)
-- [x] **Endpoints have proper CORS** headers
 
 ### Documentation
 
@@ -62,8 +53,6 @@ Use this checklist to ensure your Kolada MCP Server is ready for registry submis
 
 - [x] **NPM package installation** tested: `npx kolada-mcp-server`
 - [x] **Stdio transport** working
-- [x] **HTTP transport** working
-- [x] **SSE transport** working
 - [x] **All tools** tested and functioning
 - [x] **Error handling** implemented
 - [x] **Rate limiting** respected
@@ -117,7 +106,6 @@ Use this checklist to ensure your Kolada MCP Server is ready for registry submis
 - [ ] **Description** includes:
   - [ ] Server overview
   - [ ] Feature list
-  - [ ] Transport options
   - [ ] Testing confirmation
   - [ ] Additional context
 - [ ] **Files changed** only includes server.json
@@ -129,7 +117,6 @@ Use this checklist to ensure your Kolada MCP Server is ready for registry submis
 - [ ] Server name follows convention: `io.github.username/package-name`
 - [ ] Schema version is latest: `2025-10-17`
 - [ ] NPM package is public and accessible
-- [ ] Remote endpoints are operational
 - [ ] Repository is public with license
 - [ ] README has complete documentation
 - [ ] All metadata is accurate
@@ -157,7 +144,6 @@ Use this checklist to ensure your Kolada MCP Server is ready for registry submis
 - [ ] Server appears in registry
 - [ ] Registry listing looks correct
 - [ ] Icon displays properly
-- [ ] All endpoints listed correctly
 
 ## Post-Publication
 
@@ -179,6 +165,7 @@ Use this checklist to ensure your Kolada MCP Server is ready for registry submis
 ### Client Testing
 
 Test installation via registry in:
+
 - [ ] Claude Desktop
 - [ ] Claude Web
 - [ ] Claude Code CLI
@@ -190,6 +177,7 @@ Test installation via registry in:
 ### Version Updates
 
 When publishing new versions:
+
 - [ ] Update package.json version
 - [ ] Update server.json version
 - [ ] Publish to NPM
@@ -197,25 +185,16 @@ When publishing new versions:
 - [ ] Create PR to update server.json in registry
 - [ ] Follow same submission process
 
-### Endpoint Changes
-
-If remote endpoints change:
-- [ ] Update server.json with new URLs
-- [ ] Test new endpoints thoroughly
-- [ ] Create PR to update registry
-- [ ] Notify users of change
-
 ## Troubleshooting Reference
 
 ### Common Issues
 
-| Issue | Solution |
-|-------|----------|
-| Version mismatch | Update both package.json and server.json to same version |
-| Schema validation failed | Check server.json against schema, fix errors |
-| NPM package not found | Publish package to NPM first |
-| Endpoint not accessible | Check Render deployment, restart if needed |
-| CI checks failing | Review error logs, fix issues, push updates |
+| Issue                    | Solution                                                 |
+| ------------------------ | -------------------------------------------------------- |
+| Version mismatch         | Update both package.json and server.json to same version |
+| Schema validation failed | Check server.json against schema, fix errors             |
+| NPM package not found    | Publish package to NPM first                             |
+| CI checks failing        | Review error logs, fix issues, push updates              |
 
 ### Support Resources
 
@@ -236,20 +215,21 @@ Before clicking "Create Pull Request":
 
 ## Status Tracking
 
-| Stage | Status | Date |
-|-------|--------|------|
-| Pre-submission validation | ⏳ Pending | - |
-| GitHub Actions workflow | ⏳ Pending | - |
-| Fork & branch creation | ⏳ Pending | - |
-| Pull request created | ⏳ Pending | - |
-| CI checks passing | ⏳ Pending | - |
-| Initial review | ⏳ Pending | - |
-| Feedback addressed | ⏳ Pending | - |
-| Final approval | ⏳ Pending | - |
-| Merged to registry | ⏳ Pending | - |
-| Verified in registry | ⏳ Pending | - |
+| Stage                     | Status     | Date |
+| ------------------------- | ---------- | ---- |
+| Pre-submission validation | ⏳ Pending | -    |
+| GitHub Actions workflow   | ⏳ Pending | -    |
+| Fork & branch creation    | ⏳ Pending | -    |
+| Pull request created      | ⏳ Pending | -    |
+| CI checks passing         | ⏳ Pending | -    |
+| Initial review            | ⏳ Pending | -    |
+| Feedback addressed        | ⏳ Pending | -    |
+| Final approval            | ⏳ Pending | -    |
+| Merged to registry        | ⏳ Pending | -    |
+| Verified in registry      | ⏳ Pending | -    |
 
 **Legend:**
+
 - ⏳ Pending
 - 🔄 In Progress
 - ✅ Complete
