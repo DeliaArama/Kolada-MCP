@@ -1,0 +1,45 @@
+name: Trigger auto deployment for kolada-mcp
+
+# When this action will be executed
+on:
+  # Automatically trigger it when detected changes in repo
+  push:
+    branches: 
+      [ main ]
+    paths:
+    - '**'
+    - '.github/workflows/kolada-mcp-AutoDeployTrigger-1fb4f243-7643-4519-b9c4-37381f7ea8f1.yml'
+
+  # Allow manual trigger 
+  workflow_dispatch:
+      
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout to the branch
+        uses: actions/checkout@v2
+
+      - name: Azure Login
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.KOLADAMCP_AZURE_CREDENTIALS }}
+
+      - name: Build and push container image to registry
+        uses: azure/container-apps-deploy-action@v2
+        with:
+          appSourcePath: ${{ github.workspace }}
+          _dockerfilePathKey_: _dockerfilePath_
+          _targetLabelKey_: _targetLabel_
+          registryUrl: koladamcp.azurecr.io
+          registryUsername: ${{ secrets.KOLADAMCP_REGISTRY_USERNAME }}
+          registryPassword: ${{ secrets.KOLADAMCP_REGISTRY_PASSWORD }}
+          containerAppName: kolada-mcp
+          resourceGroup: PoC-Kolada-MCP
+          imageToBuild: koladamcp.azurecr.io/kolada-mcp:${{ github.sha }}
+          
+            
+
+     
+
